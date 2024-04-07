@@ -1,4 +1,4 @@
-package com.a08r.restfulapirelations.errors;
+package com.a08r.awcolabsapp.errors;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;

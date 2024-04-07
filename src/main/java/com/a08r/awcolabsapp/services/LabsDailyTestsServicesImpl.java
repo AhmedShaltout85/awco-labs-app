@@ -1,5 +1,6 @@
 package com.a08r.awcolabsapp.services;
 
+import com.a08r.awcolabsapp.errors.RecordNotFoundException;
 import com.a08r.awcolabsapp.models.dto.LabsDailyTestDTO;
 import com.a08r.awcolabsapp.models.labsdailytestsentity.LabsDailyTestsEntity;
 import com.a08r.awcolabsapp.models.mapper.ILabsDailyTestsMapper;
@@ -36,7 +37,7 @@ public class LabsDailyTestsServicesImpl implements ILabsDailyTestsServices {
 //                .collect(Collectors.toList());
 //
 //        if (labsDailyTestDTOList.isEmpty()) {
-//            throw new com.a08r.restfulapirelations.errors.RecordNotFoundException("Sorry, The TEST-VALUE with lab_code and test_date : " + labCode + " AND " + testDate + " not found!...");
+//            throw new RecordNotFoundException("Sorry, The TEST-VALUE with lab_code and test_date : " + labCode + " AND " + testDate + " not found!...");
 //        }
 //        return new ResponseEntity<>(labsDailyTestDTOList, HttpStatus.OK);
 //    }
@@ -45,7 +46,7 @@ public class LabsDailyTestsServicesImpl implements ILabsDailyTestsServices {
     public ResponseEntity<List<Float>> findTestValueAVG(int labCode, String testDate) {
         List<Float> list = iLabsDailyTestsRepository.Lab_Parameters(labCode, testDate);
         if (list.isEmpty() || testDate.isEmpty() || labCode == 0) {
-            throw new com.a08r.restfulapirelations.errors.RecordNotFoundException("Sorry, The TEST-VALUES with lab_code and test_date : " + labCode + " AND " + testDate + " NOT Found!...");
+            throw new RecordNotFoundException("Sorry, The TEST-VALUES with lab_code and test_date : " + labCode + " AND " + testDate + " NOT Found!...");
         }
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
@@ -58,7 +59,7 @@ public class LabsDailyTestsServicesImpl implements ILabsDailyTestsServices {
                 .map(I_LABS_DAILY_TESTS_MAPPER::labsDailyTestsEntityToLabsDailyTestsDTO)
                 .collect(Collectors.toList());
         if (labsDailyTestDTOList.isEmpty()) {
-            throw new com.a08r.restfulapirelations.errors.RecordNotFoundException("Sorry, The TEST-VALUE with lab_code and test_date :  No DATA Found!...");
+            throw new RecordNotFoundException("Sorry, The TEST-VALUE with lab_code and test_date :  No DATA Found!...");
         }
         return new ResponseEntity<>(labsDailyTestDTOList, HttpStatus.OK);
     }
@@ -67,7 +68,7 @@ public class LabsDailyTestsServicesImpl implements ILabsDailyTestsServices {
     public ResponseEntity<LabsDailyTestDTO> findBySerial(float serial) {
         Optional<LabsDailyTestsEntity> element = iLabsDailyTestsRepository.findById(serial);
         if (element.isEmpty()) {
-            throw new com.a08r.restfulapirelations.errors.RecordNotFoundException("The Break with ID: " + serial + " NOT Found!...");
+            throw new RecordNotFoundException("The Break with ID: " + serial + " NOT Found!...");
         }
         LabsDailyTestDTO labsDailyTestDTO = I_LABS_DAILY_TESTS_MAPPER.labsDailyTestsEntityToLabsDailyTestsDTO(element.get());
         return new ResponseEntity<>(labsDailyTestDTO, HttpStatus.OK);

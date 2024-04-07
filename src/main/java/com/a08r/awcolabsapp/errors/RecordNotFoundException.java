@@ -1,4 +1,4 @@
-package com.a08r.restfulapirelations.errors;
+package com.a08r.awcolabsapp.errors;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
