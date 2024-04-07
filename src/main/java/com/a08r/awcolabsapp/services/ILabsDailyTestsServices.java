@@ -8,6 +8,6 @@ import java.util.List;
 public interface ILabsDailyTestsServices {
     //    ResponseEntity<List<LabsDailyTestDTO>> findTestValueAVG(int labCode, String testDate);
     ResponseEntity<List<LabsDailyTestDTO>> findAll();
-    ResponseEntity<List<Double>> findTestValueAVG(int labCode, String testDate);
+    ResponseEntity<List<Float>> findTestValueAVG(int labCode, String testDate);
     ResponseEntity<LabsDailyTestDTO> findBySerial(float serial);
 }

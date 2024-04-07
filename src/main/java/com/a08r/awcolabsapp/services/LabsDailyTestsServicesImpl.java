@@ -42,8 +42,8 @@ public class LabsDailyTestsServicesImpl implements ILabsDailyTestsServices {
 //    }
 
     @Override
-    public ResponseEntity<List<Double>> findTestValueAVG(int labCode, String testDate) {
-        List<Double> list = iLabsDailyTestsRepository.Lab_Parameters(labCode, testDate);
+    public ResponseEntity<List<Float>> findTestValueAVG(int labCode, String testDate) {
+        List<Float> list = iLabsDailyTestsRepository.Lab_Parameters(labCode, testDate);
         if (list.isEmpty() || testDate.isEmpty() || labCode == 0) {
             throw new com.a08r.restfulapirelations.errors.RecordNotFoundException("Sorry, The TEST-VALUES with lab_code and test_date : " + labCode + " AND " + testDate + " NOT Found!...");
         }
