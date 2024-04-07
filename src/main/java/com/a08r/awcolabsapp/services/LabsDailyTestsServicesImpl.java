@@ -35,8 +35,7 @@ public class LabsDailyTestsServicesImpl implements ILabsDailyTestsServices {
 //                .map(I_LABS_DAILY_TESTS_MAPPER::labsDailyTestsEntityToLabsDailyTestsDTO)
 //                .collect(Collectors.toList());
 //
-////        List<Double> convertToDouble = labsDailyTestsEntityList.stream().map(l -> l.getTestValueAvg()).collect(Collectors.toList());
-//                if (labsDailyTestDTOList.isEmpty()) {
+//        if (labsDailyTestDTOList.isEmpty()) {
 //            throw new com.a08r.restfulapirelations.errors.RecordNotFoundException("Sorry, The TEST-VALUE with lab_code and test_date : " + labCode + " AND " + testDate + " not found!...");
 //        }
 //        return new ResponseEntity<>(labsDailyTestDTOList, HttpStatus.OK);

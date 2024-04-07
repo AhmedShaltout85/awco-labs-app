@@ -22,10 +22,10 @@ public interface ILabsDailyTestsRepository extends JpaRepository<LabsDailyTestsE
 //    List<LabsDailyTestsEntity> Lab_Parameters(@Param("Lab_Code") int labCode, @Param("Test_Date") String testDate);
 
 
-//    @Procedure(name = "Lab_Parameters")
+//    @Procedure(name = "Lab_Parameters") // used if return Entity or DTO
 //    List<LabsDailyTestsEntity> Lab_Parameters(@Param("Lab_Code") int labCode, @Param("Test_Date") String testDate);
 
-    @Procedure(name = "Lab_Parameters")
+    @Procedure(name = "Lab_Parameters") //return value equal to Double not (Entity or DTO)
     List<Double> Lab_Parameters(@Param("Lab_Code") int labCode, @Param("Test_Date") String testDate);
 
 

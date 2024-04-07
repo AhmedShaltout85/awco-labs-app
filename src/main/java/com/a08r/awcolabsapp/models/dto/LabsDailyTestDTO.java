@@ -9,9 +9,8 @@ import lombok.*;
 @AllArgsConstructor
 public class LabsDailyTestDTO {
 
-//    private Long id;
-//    private String testDate;
-//    private int labCode;
+    private String testDate;
+    private int labCode;
     private double testValueAvg;
 }
 

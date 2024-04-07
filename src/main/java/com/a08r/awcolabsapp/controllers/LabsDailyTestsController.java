@@ -34,7 +34,7 @@ public class LabsDailyTestsController {
         return this.iLabsDailyTestsServices.findTestValueAVG(labCode,testDate);
     }
 
-    @GetMapping()
+    @GetMapping(path = "/total")
     public ResponseEntity<List<LabsDailyTestDTO>> findAll(){
 
         return this.iLabsDailyTestsServices.findAll();
