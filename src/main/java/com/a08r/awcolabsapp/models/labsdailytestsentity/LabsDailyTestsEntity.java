@@ -24,7 +24,7 @@ import java.sql.Date;
         }
 )
 public class LabsDailyTestsEntity {
-    //    @Id
+//    @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
 //    @Column(name = "id")
 //    private Long id;
@@ -41,7 +41,7 @@ public class LabsDailyTestsEntity {
     private int labCode;
 
     @Column(name = "test_value", length = 53)
-    private double testValueAvg;
+    private float testValueAvg;
 //
 //    @Temporal(TemporalType.DATE)
 //    @Column(name = "approving_date")

@@ -25,7 +25,7 @@ public class LabsDailyTestsMapperImpl implements ILabsDailyTestsMapper{
     }
 
     @Override
-    public Double labsDTOtoDouble(LabsDailyTestDTO labsDailyTestDTO) {
+    public Float labsDTOtoDouble(LabsDailyTestDTO labsDailyTestDTO) {
         return labsDailyTestDTO.getTestValueAvg();
     }
 }

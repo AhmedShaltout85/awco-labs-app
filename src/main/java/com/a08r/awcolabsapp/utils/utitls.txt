@@ -6,3 +6,26 @@ http://localhost:8080/awco-labs-app/api/v1/avg/filter/lab-code/test-date/11/2024
 
 -- must determine the return type before create methods in repos
 -- spring 3.2.0 with jdk 17(solve errors occur with stored procedure mssql)
+
+    //1-this way is run good with stored procedure
+//    @Query(value = "EXEC Lab_Parameters ?1, ?2", nativeQuery = true)
+//    List<Float> Lab_Parameters(@Param("Lab_Code") int labCode, @Param("Test_Date") String testDate);
+
+    //2-this way is run good with stored procedur
+//    @Procedure(name = "Lab_Parameters") // used if return Entity or DTO
+//    List<Float> Lab_Parameters(@Param("Lab_Code") int labCode, @Param("Test_Date") String testDate);
+
+    //3-this way is run good with stored procedure
+    @Procedure(name = "Lab_Parameters") //return value equal to Double not (Entity or DTO)
+    List<Float> Lab_Parameters(@Param("Lab_Code") int labCode, @Param("Test_Date") String testDate);
+
+    must add named-query in entity like this:
+
+    @NamedStoredProcedureQuery(
+            name = "Lab_Parameters",
+            procedureName = "Lab_Parameters",
+            parameters = {
+                    @StoredProcedureParameter(mode = ParameterMode.IN, type = Integer.class, name = "Lab_Code"),
+                    @StoredProcedureParameter(mode = ParameterMode.IN, type = String.class, name = "Test_Date"),
+            }
+    )

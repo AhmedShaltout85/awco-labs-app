@@ -11,7 +11,7 @@ public class LabsDailyTestDTO {
 
     private String testDate;
     private int labCode;
-    private double testValueAvg;
+    private float testValueAvg;
 }
 
 //public class LabsDailyTestDTO {

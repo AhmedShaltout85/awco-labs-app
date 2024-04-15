@@ -1,4 +1,4 @@
-package com.a08r.restfulapirelations.modles;
+package com.a08r.awcolabsapp.models;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;

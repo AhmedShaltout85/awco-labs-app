@@ -9,5 +9,5 @@ public interface ILabsDailyTestsMapper {
 
     LabsDailyTestsEntity labsDailyTestsDTOToLabsDailyTestsEntity(LabsDailyTestDTO labsDailyTestDTO);
     LabsDailyTestDTO labsDailyTestsEntityToLabsDailyTestsDTO(LabsDailyTestsEntity labsDailyTestsEntity);
-    Double labsDTOtoDouble(LabsDailyTestDTO labsDailyTestDTO);
+    Float labsDTOtoDouble(LabsDailyTestDTO labsDailyTestDTO);
 }
