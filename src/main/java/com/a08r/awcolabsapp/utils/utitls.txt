@@ -29,3 +29,15 @@ http://localhost:8080/awco-labs-app/api/v1/avg/filter/lab-code/test-date/11/2024
                     @StoredProcedureParameter(mode = ParameterMode.IN, type = String.class, name = "Test_Date"),
             }
     )
+
+--to add docs :
+
+openapi docs
+
+<!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui -->
+<dependency>
+    <groupId>org.springdoc</groupId>
+    <artifactId>springdoc-openapi-ui</artifactId>
+    <version>1.7.0</version>
+</dependency>
+
