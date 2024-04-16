@@ -11,6 +11,10 @@ http://localhost:8080/awco-labs-app/api/v1/avg/filter/lab-code/test-date/11/2024
 //    @Query(value = "EXEC Lab_Parameters ?1, ?2", nativeQuery = true)
 //    List<Float> Lab_Parameters(@Param("Lab_Code") int labCode, @Param("Test_Date") String testDate);
 
+   //1-this way is run good with stored procedure(named args)
+//    @Query(value = "EXEC Lab_Parameters :Lab_Code, :Test_Date", nativeQuery = true) // used with any return type
+//    List<Float> Lab_Parameters(@Param("Lab_Code") int labCode, @Param("Test_Date") String testDate);
+
     //2-this way is run good with stored procedur
 //    @Procedure(name = "Lab_Parameters") // used if return Entity or DTO
 //    List<Float> Lab_Parameters(@Param("Lab_Code") int labCode, @Param("Test_Date") String testDate);
@@ -30,14 +34,27 @@ http://localhost:8080/awco-labs-app/api/v1/avg/filter/lab-code/test-date/11/2024
             }
     )
 
+    --jpql mean: used entity schema name and args in native query
+@Transactional
+@Modify
+are used with native query that is used to change or update in db records
+
+   //1-this way is run good with stored procedure(named args)
+//    @Query(value = "EXEC Lab_Parameters :Lab_Code, :Test_Date", nativeQuery = true) // used with any return type
+//    List<Object[]> Lab_Parameters(@Param("Lab_Code") int labCode, @Param("Test_Date") String testDate);
+
+--IMPORTANT: List<Object[]> mean that : return part of entity args not all args
+
 --to add docs :
 
 openapi docs
 
 <!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui -->
-<dependency>
-    <groupId>org.springdoc</groupId>
-    <artifactId>springdoc-openapi-ui</artifactId>
-    <version>1.7.0</version>
-</dependency>
+  <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.2.0</version>
+  </dependency>
 
+http://localhost:8080/awco-labs-app/swagger-ui/index.html
+http://localhost:8080/awco-labs-app/v3/api-docs?continue

@@ -15,8 +15,12 @@ public interface ILabsDailyTestsRepository extends JpaRepository<LabsDailyTestsE
 //     List<LabsDailyTestsEntity> Lab_Parameters(int labCode, String testDate);
 
 
-    //1-this way is run good with stored procedure
+    //1-this way is run good with stored procedure(position args must added in the same arrange)
 //    @Query(value = "EXEC Lab_Parameters ?1, ?2", nativeQuery = true) // used with any return type
+//    List<Float> Lab_Parameters(@Param("Lab_Code") int labCode, @Param("Test_Date") String testDate);
+
+    //1-this way is run good with stored procedure(named args)
+//    @Query(value = "EXEC Lab_Parameters :Lab_Code, :Test_Date", nativeQuery = true) // used with any return type
 //    List<Float> Lab_Parameters(@Param("Lab_Code") int labCode, @Param("Test_Date") String testDate);
 
     //2-this way is run good with stored procedure

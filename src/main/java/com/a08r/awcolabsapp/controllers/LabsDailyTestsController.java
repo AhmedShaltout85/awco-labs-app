@@ -2,15 +2,14 @@ package com.a08r.awcolabsapp.controllers;
 
 import com.a08r.awcolabsapp.models.dto.LabsDailyTestDTO;
 import com.a08r.awcolabsapp.services.ILabsDailyTestsServices;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Tag(name = "Tests-AVG-Values")
 @RestController
 @RequestMapping(path = "/api/v1/avg")
 public class LabsDailyTestsController {
@@ -34,15 +33,15 @@ public class LabsDailyTestsController {
         return this.iLabsDailyTestsServices.findTestValueAVG(labCode,testDate);
     }
 
-    @GetMapping(path = "/total")
-    public ResponseEntity<List<LabsDailyTestDTO>> findAll(){
-
-        return this.iLabsDailyTestsServices.findAll();
-    }
-
-    @GetMapping(path ="/{serial}" )
-    public ResponseEntity<LabsDailyTestDTO> findBySerial(@PathVariable float serial){
-        return this.iLabsDailyTestsServices.findBySerial(serial);
-    }
+//    @GetMapping(path = "/total")
+//    public ResponseEntity<List<LabsDailyTestDTO>> findAll(){
+//
+//        return this.iLabsDailyTestsServices.findAll();
+//    }
+//
+//    @GetMapping(path ="/{serial}" )
+//    public ResponseEntity<LabsDailyTestDTO> findBySerial(@PathVariable float serial){
+//        return this.iLabsDailyTestsServices.findBySerial(serial);
+//    }
 
 }
