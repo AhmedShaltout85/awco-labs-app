@@ -38,10 +38,10 @@ public class LabsDailyTestsEntity {
     private Date testDate;
 
     @Column(name = "lab_code")
-    private int labCode;
+    private Integer labCode;
 
     @Column(name = "test_value", length = 53)
-    private float testValueAvg;
+    private Float testValueAvg;
 //
 //    @Temporal(TemporalType.DATE)
 //    @Column(name = "approving_date")

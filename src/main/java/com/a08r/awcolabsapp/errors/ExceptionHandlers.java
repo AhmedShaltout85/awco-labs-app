@@ -22,4 +22,6 @@ public class ExceptionHandlers extends ResponseEntityExceptionHandler {
                 recordNotFoundException.getMessage(), new Date());
         return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
     }
+
+
 }

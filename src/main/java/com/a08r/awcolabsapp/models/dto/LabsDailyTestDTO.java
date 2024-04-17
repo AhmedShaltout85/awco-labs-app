@@ -10,8 +10,8 @@ import lombok.*;
 public class LabsDailyTestDTO {
 
     private String testDate;
-    private int labCode;
-    private float testValueAvg;
+    private Integer labCode;
+    private Float testValueAvg;
 }
 
 //public class LabsDailyTestDTO {

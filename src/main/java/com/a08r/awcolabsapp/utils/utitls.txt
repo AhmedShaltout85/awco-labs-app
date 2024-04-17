@@ -58,3 +58,15 @@ openapi docs
 
 http://localhost:8080/awco-labs-app/swagger-ui/index.html
 http://localhost:8080/awco-labs-app/v3/api-docs?continue
+
+--difference between int and Integer :
+int default value= 0
+Integer default value = null
+so if Id in @Id must be Integer because if have no value it not found value with 0
+
+-- if database create before create Restful api and not need to change args values used:
+spring.jpa.hibernate.ddl-auto=none
+
+-- if you want to use more than one dbs :(config file)
+create 2 application.properties-mysql
+         application.properties-mssql

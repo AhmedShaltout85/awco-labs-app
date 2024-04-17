@@ -28,7 +28,7 @@ public class LabsDailyTestsController {
 //    }
         @GetMapping(path ="/filter/lab-code/test-date/{labCode}/{testDate}")
     public ResponseEntity<List<Float>>
-    findByLabCodeAndTestDate(@PathVariable int labCode, @PathVariable String testDate){
+    findByLabCodeAndTestDate(@PathVariable Integer labCode, @PathVariable String testDate){
 
         return this.iLabsDailyTestsServices.findTestValueAVG(labCode,testDate);
     }
