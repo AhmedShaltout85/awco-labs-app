@@ -27,7 +27,7 @@ public class OpenApiConfig {
                                  @Value("${application-version}") String appVersion) {
         return new OpenAPI()
                 .info(new Info()
-                        .title("AWCO LABS APP API")
+                        .title("AWCO LABS APP API Docs")
                         .version(appVersion)
                         .contact(getContact())
                         .description(appDesciption)
