@@ -11,8 +11,9 @@ import java.util.List;
 
 @Repository
 public interface ILabsDailyTestsRepository extends JpaRepository<LabsDailyTestsEntity, Float> {
-//    @Procedure
-//     List<LabsDailyTestsEntity> Lab_Parameters(int labCode, String testDate);
+    //4-this way is run good with stored procedure(MUST DEFINE CORRECT RETURN TYPE)
+    @Procedure
+     List<Float> Lab_Parameters(int labCode, String testDate); // used with any return type
 
 
     //1-this way is run good with stored procedure(position args must added in the same arrange)
@@ -28,8 +29,8 @@ public interface ILabsDailyTestsRepository extends JpaRepository<LabsDailyTestsE
 //    List<Float> Lab_Parameters(@Param("Lab_Code") int labCode, @Param("Test_Date") String testDate);
 
     //3-this way is run good with stored procedure
-    @Procedure(name = "Lab_Parameters") // used with any return type
-    List<Float> Lab_Parameters(@Param("Lab_Code") int labCode, @Param("Test_Date") String testDate);
+//    @Procedure(name = "Lab_Parameters") // used with any return type
+//    List<Float> Lab_Parameters(@Param("Lab_Code") int labCode, @Param("Test_Date") String testDate);
 
-
+// TODO:// IF NOT DEFINE CORRECT RETURN TYPE YOU GET ERROR LIKE(${COLUMN-NAME} NOT FOUND || NOT HAVE COLUMN WITH ${COLUMN-NAME})
 }
