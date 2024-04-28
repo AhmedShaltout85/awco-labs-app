@@ -23,3 +23,6 @@ public class LabsDailyTestDTO {
 //    }
 //}
 
+//public record labsDailyTestDTO(String testDate, Integer labCode, Float testValueAvg){
+//
+//}
