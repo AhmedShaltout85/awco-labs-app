@@ -17,7 +17,7 @@ public class ExceptionHandlers extends ResponseEntityExceptionHandler {
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ResponseBody
     public final ResponseEntity<ErrorResponse> handleItemNotFoundException
-            (final RecordNotFoundException recordNotFoundException){
+            (final RecordNotFoundException recordNotFoundException) {
         ErrorResponse errorResponse = new ErrorResponse("404",
                 recordNotFoundException.getMessage(), new Date());
         return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
