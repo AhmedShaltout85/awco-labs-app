@@ -8,6 +8,10 @@ import java.sql.Date;
 public class LabsDailyTestsMapperImpl implements ILabsDailyTestsMapper{
     @Override
     public LabsDailyTestsEntity labsDailyTestsDTOToLabsDailyTestsEntity(LabsDailyTestDTO labsDailyTestDTO) {
+        //updated for unit testing (shouldThrowNotNullExceptionWhenLabsDTOisNull-- method)
+        if(labsDailyTestDTO == null){
+            throw new NullPointerException("labsDailyTestDTO should not be null");
+        }
         LabsDailyTestsEntity labsDailyTestsEntity = new LabsDailyTestsEntity();
         labsDailyTestsEntity.setLabCode(labsDailyTestDTO.getLabCode());
         labsDailyTestsEntity.setTestDate(Date.valueOf(labsDailyTestDTO.getTestDate()));
