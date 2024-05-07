@@ -63,9 +63,10 @@ class LabsDailyTestsMapperImplTest {
 
     }
 
-//    @Test
-//    void labsDTOtoDouble() {
-//
-//    }
+    @Test
+    @Disabled
+    void labsDTOtoDouble() {
+
+    }
 
 }
